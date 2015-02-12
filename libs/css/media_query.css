@@ -1,14 +1,20 @@
 /* @MEDIA QUERY for Mobile & Tablet*/
 
-@media screen and (min-width: 0px) and (max-width: 760px) {
+@media screen and (min-width: 0px) and (max-width: 540px) {
 
 #container {
   width: 100%;
 }
+
+h3.banner {
+  display: none;
+}
+
 .logo {
   width: 35%;
   margin-top: 2%;
   margin-left: -17%;
+  z-index: 100;
 }
 /* mobile navigation dropdown menu */ 
   
@@ -18,11 +24,7 @@ header {
 
 }
 
-#weather {
-  left: 0;
-  margin-left: -12%;
-  margin-top: 1%;
-}
+
 
 nav.mobile {
     height: 7em;
@@ -49,7 +51,7 @@ nav.mobile {
 
 a:hover#menu-icon {
 
-  background-color: #FFFFFF;
+  background-color: #0e586e;
   color: #0e586e;
 
 }
@@ -60,9 +62,10 @@ a:hover#menu-icon {
     position: absolute;
     padding: 1%;
     right: -2%;
-    top: 5em;
+    top: 60%;
     width: 50%;
     border-radius: 0 0 1em 1em;
+    z-index: 50;
 
   }
 
@@ -114,13 +117,18 @@ a:hover#menu-icon {
     width: 100%;
   }
 
-  article p {
+article p {
     font-size: .9em;
     padding: 2%;
   }
 
-  article.main p:nth-child(3) {
+article.main p:nth-child(3) {
   text-indent: 0%;
+}
+
+.top-content h3:nth-child(2) {
+  border-radius: 0;
+  text-indent: 0;
 }
 
   article.right p {
@@ -129,13 +137,26 @@ a:hover#menu-icon {
   
 article.main img {
   width: 100%;
+
 }
 
+.top-content article.main h3 {
+  border-radius: none;
+}
 
-
+article.right img {
+    float: right;
+    width: 100%;
+    
+  }
+  
   article#coffee {
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
+  }
+
+  article#coffee p {
+    padding: 0 2%;
   }
 
   article#coffee img {
@@ -147,11 +168,17 @@ article.main img {
   aside.main {
     clear: both;
     width: 95%;
+    left: 50%;
+    margin-left: -47.5%;
   }
   article.main-lists {
-    width: 90%;
+    width: 100%;
     float: left;
     margin: 0 auto;
+  }
+
+  article.main-lists p {
+    padding:  0 2%;
   }
 
   article.photo { 
@@ -167,9 +194,29 @@ article.main img {
   }
 
   article.photo img {width: 100%; float: left;}
+
+/*======================|
+|       FORM            |               === voting contact form ===
+|====================== */
+
+  article#contact {
+      top:0;
+      left: 50%;
+      margin-top: 5%;
+      margin-left: 4%;
+      width: 90%;
+      float: left;
+      background-color: #ffffff; 
+      padding: 1%;
+      border-radius: 1em;
+    }
+
+/*======================|
+|       FOOTER          |
+|====================== */      
   
 footer {
-  height: 18em;
+  height: auto;
 }
 
 footer p {
@@ -178,7 +225,8 @@ footer p {
 
 #footer-container {
     width: 90%;
-    height: 12em;
+    height: auto;
+    overflow: auto;
   }
 
 #footer-nav {
@@ -201,7 +249,7 @@ footer p {
 #social-media {
   width: 90%;
   margin: 0 auto;
-  padding: none;
+  padding-bottom: 1em;
   float: left;
   text-align: center;
 }
@@ -213,8 +261,7 @@ footer p {
   display: none;
 }
 
-  .mobile-slideshow { width: 100%; padding: none; clear: both; }
-  .mobile-slideshow img { width: 100%; padding: none; clear: both;}
+  
 }
 
 
@@ -222,7 +269,7 @@ footer p {
 ==========       TABLET       ========== 
 ======================================*/
 
-@media screen and (min-width: 761px) and (max-width: 1024px) {
+@media screen and (min-width: 540px) and (max-width: 1024px) {
   .mobile { display: none; }   
 
   .logo {
@@ -236,25 +283,29 @@ footer p {
   }
 
   nav.desktop {
-    width: 90%;
+    width: 100%;
     height: 30%;
     padding: .313em;
     z-index: 2000;
     top: 0;
   }
 
-  .nav-left {
+.nav-left {
  
-  margin-left: 2%;
+  margin-left: -5%;
+}
+
+.nav-right {
+  margin-left: 11%;
 }
 
   nav ul li {
     font: .85em/1.25em;
-    padding: .85% 1%;
+    padding: 2% 1%;
   }
 
   ul li {
-    padding: 0 1% 1% 2%;
+    padding: 0 1% 1% 1%;
   }
 
   ul li ul {
@@ -274,18 +325,25 @@ footer p {
     text-indent: 0;
   }
 
-  article#coffee {
-    width: 95%;
+  #map {
+    width: 45%;
 
   }
+
+  article.main-lists {
+    width: 50%;
+  }
+
+
 
 article#coffee p:nth-child(2) {
     margin-top: 4.5%;
 }
 
   aside.main {
-    width: 90%;
-    clear: both;
+    width: 25%;
+    clear: none;
+    margin: 0 auto;
 
   }
 

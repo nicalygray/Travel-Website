@@ -109,15 +109,19 @@ i {
 
 #weather {
   width: 30%;
-  margin: 4% 5%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 7%;
   float: left;
 }
 }
 
 @media screen and (min-width: 761px) and (max-width: 1024px) {
   #weather {
-    width: 15%;
-    margin: -5%;
+    width: 25%;
+    margin-top: -4%;
+    margin-right: -3%;
   }
 
   #weather h2, .currently {

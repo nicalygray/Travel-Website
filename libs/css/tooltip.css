@@ -1,0 +1,50 @@
+#tooltip
+{
+    text-align: center;
+    font-size: .85em;
+    color: #fff;
+    background: #1884a4;
+    position: absolute;
+    border-radius: 0 0 1em 1em;
+    z-index: 100;
+    padding: 15px;
+    border-top: 2px solid #0e586e;
+    cursor: pointer;
+   -webkit-box-shadow: inset 0 2px #0e586e;
+    box-shadow: inset 0 2px #0e586e;
+}
+ 
+    #tooltip:after /* triangle decoration */
+    {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid #1884a4;
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -10px;
+        margin-left: -10px;
+    }
+ 
+        #tooltip.top:after
+        {
+            border-top-color: transparent;
+            border-bottom: 10px solid #1884a4;
+            top: -20px;
+            bottom: auto;
+        }
+ 
+        #tooltip.left:after
+        {
+            left: 10px;
+            margin: 0;
+        }
+ 
+        #tooltip.right:after
+        {
+            right: 10px;
+            left: auto;
+            margin: 0;
+        }

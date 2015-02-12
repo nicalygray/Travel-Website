@@ -1,6 +1,11 @@
 body, html {
   width: 100%;
   height: 100%;
+  font-family: "proxima-nova",sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Roboto Slab", serif;
 }
 
 #container {
@@ -16,7 +21,10 @@ background: #0e586e;
   height: 15%;
   width: 100%;
   position: relative;
-  box-shadow: 
+  border-bottom: 2px solid #0c4b5e;
+  -webkit-box-shadow: inset 0 -2px #0c4b5e;
+  box-shadow: inset 0 -2px #0c4b5e;
+  
 }
 
 header {
@@ -30,6 +38,16 @@ header {
   float: left;
 }
 
+h3.banner { 
+  width: 100%;
+  margin: 0 auto;
+  background-color: #697206;
+  color: #ffffff;
+  font-family: 'Roboto Slab';
+  padding: 1% 0;
+  text-indent: 2%;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
 
 
 .top-content, .bottom-content  {
@@ -41,6 +59,23 @@ header {
   overflow: auto;
 }
 
+.top-content h3, .bottom-content h3 {         /* lists and maps for content on "things" pages */
+  background-color: #697206;
+  color: #FFFFFF;
+  font-family: 'Roboto Slab';
+  margin-top: 0;
+  padding: 1%;
+  text-indent: 5%;
+}
+
+.top-content h3:nth-child(2) {            
+  padding: 1%;
+  text-indent: 0;
+}
+
+.top-content a, .bottom-content a {
+  font-weight: bold;
+}
 
 
 .logo {
@@ -52,6 +87,7 @@ header {
   left: 50%;
   margin-top: -3.5%;
   margin-left: -7.5%;
+  z-index: 100;
 }
 
 a {
@@ -64,6 +100,7 @@ a:hover {
   color: #1884a4;
   text-decoration: none;
 }
+
 p {
   font-family: "proxima-nova",sans-serif;
   font-style: normal;
@@ -102,7 +139,7 @@ ul {
   text-align: left;
   display: inline;
   margin: 0 auto;
-  padding: .5% .75% 1% 0;
+  padding: .5% .5% 1% 0;
   list-style: none;
 
 }
@@ -113,7 +150,7 @@ ul li {
   margin-right: -.25em;
   position: relative;
   padding: .938em 1.25em;
-  
+  z-index: 50;
   cursor: pointer;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
@@ -147,6 +184,9 @@ ul li ul li {
 
 ul li ul li:last-child {
   border-radius: 0 0 1em 1em;
+   border-bottom: 2px solid #0c4b5e;
+  -webkit-box-shadow: inset 0 -2px #0c4b5e;
+  box-shadow: inset 0 -2px #0c4b5e;
 }
 
 ul li:hover ul {
@@ -168,9 +208,14 @@ ul li a:hover {
 .sub-nav {                    /*  filter menu on "things" pages */
   width: 100%;
   margin: 0 auto;
-  padding: 1%;
+  padding: 1% 0;
   background-color: #697206;
   clear: both;
+  border-radius: 0 0 1em 1em;
+          border-bottom: 2px solid #535a05;
+          -webkit-box-shadow: inset 0 -2px #535a05;
+          box-shadow: inset 0 -2px #535a05;
+          margin-bottom: 1%;
 }
 
 .sub-nav ul {
@@ -182,7 +227,8 @@ ul li a:hover {
 
 .sub-nav ul li {
   color: #ffffff;
-  font-weight: 1em/1.25em 'Roboto Slab';
+  font: 1em/1.25em;
+  font-family: 'Roboto Slab';
   position: relative;
   margin: 0 auto;
 }
@@ -232,7 +278,7 @@ ul li a:hover {
 |====================== */
 
 #columns {
-   -webkit-column-count: 2 /* Chrome, Safari, Opera */
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */        /* columns for sites page */
     -moz-column-count: 2; /* Firefox */
     column-count: 2;
     -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
@@ -240,27 +286,40 @@ ul li a:hover {
     column-gap: 40px;
 }
 
-article#coffee img {        /* top articles for the content pages all have #coffee tag */
+.index {
+  background-color: #697206; 
+  height: auto; 
+  overflow: hidden; 
+  border-radius: 1em 1em 0 0; 
+  border-top: 2px solid #535a05;
+  -webkit-box-shadow: inset 0 2px #535a05;
+  box-shadow: inset 0 2px #535a05;
+}
+
+article.main h3:nth-child(2) {
+  text-indent: 10%;
+}
+
+article.main p.first {
+  text-indent: 3%;
+}
+
+article.main img {
   width: 50%;
   float: left;
-  margin: 0 2% 1% 0;
+  margin: 0 2% 0 0;
 }
 
-article#coffee {
-  width: 73%;
-  height: auto;
-  overflow: auto;
-  background-color: #697206;
-  margin: 0% auto;
-  position: relative;
-  float: left;
 
-}
+/*======================|
+|         ASIDE         |
+|====================== */
 
 aside.main {
+  clear: none;
+  
   width: 25%;
   height: auto;
-  margin: 0 auto;
   overflow: auto;
   position: relative;
   background-color: #ffffff;
@@ -278,14 +337,38 @@ aside.main h3 {
   border-radius: 1em 1em 0 0;
   background-color: #ffffff;
   text-align: center;
+  border: none;
+  border-bottom: none;
+  -webkit-box-shadow: none;
+    box-shadow: none;
 }
+
+
+
+/*======================|
+|    ARTICLE COFFEE     |
+|====================== */
 
 .coffee{
   background-color: #697206;
 }
+article#coffee img {        /* top articles for the content pages all have #coffee tag */
+  width: 50%;
+  float: left;
+  margin: 0 2% 1% 0;
+}
+
+article#coffee {
+  width: 73%;
+  height: auto;
+  overflow: auto;
+  background-color: #697206;
+  margin: 0% auto;
+  position: relative;
+  float: left;
+}
 
 article#coffee p {
-
   color: #ffffff;
   font-size: .9em;
   line-height: 1.25em;
@@ -297,50 +380,23 @@ article#coffee p:nth-child(2) {
 }
 
 
-.top-content h3, .bottom-content h3 {         /* lists and maps for content on "things" pages */
-  background-color: #697206;
-  color: #FFFFFF;
-  font-family: 'Roboto Slab';
-  margin-top: 0;
-  padding: 1%;
-  text-indent: 5%;
-
+article.main h3 {    
+    text-align: right;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 0;
+    padding:  1%;
+    background-color: ##697206;
+    color: #ffffff;
+    border: none;
+    border-radius: 0 0 1em 0;
+    border-bottom: 2px solid #535a05;
+    -webkit-box-shadow: inset 0 -2px #535a05;
+    box-shadow: inset 0 -2px #535a05;
 }
 
-.top-content h3 {
-  
-  text-indent: 0;
-}
 
-.bottom-content {
-  overflow-x: hidden;
-}
 
-h3.banner { 
-  width: 100%;
-  margin: 0 auto;
-  background-color: #697206;
-  color: #ffffff;
-  font-family: 'Roboto Slab';
-  padding: 1% 0;
-  text-indent: 2%;
-  
 
-}
-
-article.main h3:nth-child(2) {
-  text-indent: 10%;
-}
-
-article.main p:nth-child(3) {
-  text-indent: 5%;
-}
-
-article.main img {
-  width: 50%;
-  float: left;
-  margin: 0 2% 1% 0;
-}
 
 article.main-lists {
   width: 52%;
@@ -349,15 +405,81 @@ article.main-lists {
   font-size: .9em;
 }
 
+article.main-lists h3 {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 0;
+    padding:  2%;
+    background-color: ##697206;
+    color: #ffffff;
+    border: none;
+    border-bottom: 2px solid #535a05;
+   -webkit-box-shadow: inset 0 -2px #535a05;
+    box-shadow: inset 0 -2px #535a05;
+}
+  
+.right, .main {
+    clear: both;
+
+}
+
+/*======================|
+|    ARTICLE RIGHT      |
+|====================== */
+
+article.right h3 {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 0;
+    padding:  3%;
+    background-color: ##697206;
+    color: #ffffff;
+    border-radius: 0 0 0 1em;
+    border: none;
+    border-bottom: 2px solid #535a05;
+   -webkit-box-shadow: inset 0 -2px #535a05;
+    box-shadow: inset 0 -2px #535a05;
+}
+
+article.right img {
+    float: right;
+    width: 50%;
+    margin: 0 0 0 2%;
+  }
+
+
+
+/*.top-content h3:nth-child(even) {
+  border-radius: 0 0 0 1em;
+}*/
+
+.bottom-content {
+  overflow-x: hidden;
+}
+
+
 #featured {
   clear: both;
 }
+/*======================|
+|    ARTICLE PHOTO      |
+|====================== */
 
 article.photo {
   width: 32.25%;
   padding: 0;
   margin: 0 auto;
   float: left;
+}
+
+article.photo h3 {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 0;
+    padding:  3%;
+    background-color: ##697206;
+    color: #ffffff;
+    border: none;
+    border-bottom: 2px solid #535a05;
+   -webkit-box-shadow: inset 0 -2px #535a05;
+    box-shadow: inset 0 -2px #535a05;
 }
 
 article.photo:first-child {
@@ -367,12 +489,6 @@ article.photo:first-child {
 article.photo:last-child {
   margin-left: 1.5%;
 }
-
-article.figures {
-  width: 100%;
-  padding: none;
-}
-
 
 article.photo h3 {
   background-color: #697206;
@@ -400,21 +516,70 @@ article.photo h3 {
       padding: 1%;
       margin: 1% 1% 1% 0;
     }
+/*======================|
+|       FORM            |               === voting contact form ===
+|====================== */
+
+  article#contact {
+      margin-top: 2%;
+      margin-left: 2%;
+      width: 40%;
+      float: left;
+      background-color: #ffffff; 
+      padding: 1%;
+      border-radius: 1em;
+    }
+
+  article#contact input[type=submit] {
+    position: relative;
+    bottom: 0;
+    left: 50%;
+    margin-bottom: 1%;
+    margin-left: -13%;
+    height: 10%;
+    width: 25%;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 0;
+    padding:  3%;
+    background-color: #1884a4;
+    color: #ffffff;
+    border: none;
+    border-bottom: 2px solid #0e586e;
+    cursor: pointer;
+   -webkit-box-shadow: inset 0 -2px #0e586e;
+    box-shadow: inset 0 -2px #0e586e;
+
+  }  
+
+  article#contact input[type=submit]:hover {
+    background-color: #0e586e;
+    color: #ffffff;
+}
+  article#contact input[type=submit]:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 
 
 /*======================|
 |       FOOTER          |
 |====================== */
+
 footer {
   width: 100%;
   background-color: #0e586e;
   height: auto;
   overflow: hidden;
   clear: both;
+     border-top: 2px solid #0c4b5e;
+  -webkit-box-shadow: inset 0 2px #0c4b5e;
+  box-shadow: inset 0 2px #0c4b5e;
 }
 
 #footer-container {
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
  background-color: #0e586e;
 }
@@ -448,23 +613,37 @@ footer p {
   font-family: 'Roboto Slab';
   color: #ffffff;
 }
-input[type=text] {
-  padding: 1%;
-  border-radius: .5em;
-  border: 1px solid #1884a4;
-
+#subscribe input[type=text] {
+  padding: 3%;
+  border: none;
 }
 input[type=submit] {
-  border-radius: .5em;
-  padding: 1% 2%;
-  background-color: #ffffff;
-  color: #000000;
-  border: none;
+  
+  
+  height: 10%;
+    width: 25%;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 0;
+    padding:  3%;
+    background-color: #1884a4;
+    color: #ffffff;
+    border: none;
+    border-bottom: 2px solid #0e586e;
+    cursor: pointer;
+   -webkit-box-shadow: inset 0 -2px #0e586e;
+    box-shadow: inset 0 -2px #0e586e;
 }
 
 input[type=submit]:hover {
   background-color: #1884a4;
   color: #ffffff;
+}
+
+input[type=submit]:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 #social-media {
@@ -480,17 +659,3 @@ input[type=submit]:hover {
   width: 15%;
 }
 
-/*======================|
-|    CLEAR FIX          |
-|====================== */
- /* new clearfix */
-.clearfix:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " . ";
-    clear: both;
-    height: 0;
-    }
-* html .clearfix             { zoom: 1; } /* IE6 */
-*:first-child+html .clearfix { zoom: 1; } /* IE7 */
